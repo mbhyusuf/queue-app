@@ -3,10 +3,11 @@
 namespace App\Controllers;
 
 use App\Models\Problem;
+use \CodeIgniter\Shield\Models\UserModel;
 
-class Admin extends BaseController
+class Solution extends BaseController
 {
-    public function index()
+    public function index($id)
     {
         if (! auth()->user()->inGroup('superadmin', 'admin')) {
             $data = [
@@ -16,11 +17,15 @@ class Admin extends BaseController
         }
 
         $problemsModel = new Problem();
-        $problems = $problemsModel->where('status', 'pending')->orderBy('updated_at')->findAll();
+        $problem = $problemsModel->find($id);
+
+        $userModel = new UserModel();
+        $user = $userModel->find($problem['user_id']);
         $data = [
             'title' => 'Admin',
-            'problems' => $problems
+            'problem' => $problem,
+            'username' => $user->username
         ];
-        return view('pages/admin', $data);
+        return view('pages/solution', $data);
     }
 }

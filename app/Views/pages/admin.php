@@ -5,12 +5,13 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Hello, world! Admin Page ay</h1>
+            <h1>Today's Clients.</h1>
 
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Client</th>
                         <th scope="col">Title</th>
                         <th scope="col">Description</th>
                         <th scope="col">Created at</th>
@@ -25,15 +26,21 @@
                         <tr>
 
                             <th scope="row"><?= $i++; ?></th>
+                            <?php
+                            $userModel = new \CodeIgniter\Shield\Models\UserModel;
+                            $user = $userModel->find($problem['user_id']);
+                            ?>
+                            <td><?= $user->username; ?></td>
+
                             <td><?= $problem['title']; ?></td>
                             <td><?= $problem['description']; ?></td>
                             <td><?= $problem['created_at']; ?></td>
                             <td><?= $problem['updated_at']; ?></td>
                             <td><?= $problem['status']; ?></td>
                             <td>
-                                <form class="m-2" action="edit/<?= $problem['id']; ?>" method="post">
+                                <form class="m-2" action="admin/<?= $problem['id']; ?>" method="post">
                                     <?= csrf_field() ?>
-                                    <button class="btn btn-warning" type="submit">Mark as Done</button>
+                                    <button class="btn btn-warning" type="submit" <?= ($i > 2) ? "disabled" : ""; ?>>Mark as Done</button>
                                 </form>
                             </td>
                         </tr>

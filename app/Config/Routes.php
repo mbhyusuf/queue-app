@@ -15,4 +15,5 @@ $routes->post('/edit/(:segment)', 'Consult::editProblem/$1');
 $routes->post('/update/(:segment)', 'Consult::updateProblem/$1');
 
 $routes->get('/admin', 'Admin::index');
+$routes->post('/admin/(:segment)', 'Solution::index/$1');
 service('auth')->routes($routes);
