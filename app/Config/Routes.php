@@ -13,7 +13,9 @@ $routes->post('/consult', 'Consult::postProblem');
 $routes->post('/delete/(:segment)', 'Consult::deleteProblem/$1');
 $routes->post('/edit/(:segment)', 'Consult::editProblem/$1');
 $routes->post('/update/(:segment)', 'Consult::updateProblem/$1');
+$routes->post('/solution/(:segment)', 'SolutionController::getSolution/$1');
 
 $routes->get('/admin', 'Admin::index');
-$routes->post('/admin/(:segment)', 'Solution::index/$1');
+$routes->post('/admin/solution/(:segment)', 'SolutionController::postSolution/$1');
+$routes->post('/admin/(:segment)', 'SolutionController::index/$1');
 service('auth')->routes($routes);

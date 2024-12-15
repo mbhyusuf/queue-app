@@ -37,14 +37,21 @@
                             <td><?= $problem['updated_at']; ?></td>
                             <td><?= $problem['status']; ?></td>
                             <td>
-                                <form class="m-2" action="edit/<?= $problem['id']; ?>" method="post">
-                                    <?= csrf_field() ?>
-                                    <button class="btn btn-warning" type="submit">Edit</button>
-                                </form>
-                                <form class="m-2" action="delete/<?= $problem['id']; ?>" method="post">
-                                    <?= csrf_field() ?>
-                                    <button class="btn btn-danger" type="submit">Delete</button>
-                                </form>
+                                <?php if ($problem['status'] == 'pending') : ?>
+                                    <form class="m-2" action="edit/<?= $problem['id']; ?>" method="post">
+                                        <?= csrf_field() ?>
+                                        <button class="btn btn-warning" type="submit">Edit</button>
+                                    </form>
+                                    <form class="m-2" action="delete/<?= $problem['id']; ?>" method="post">
+                                        <?= csrf_field() ?>
+                                        <button class="btn btn-danger" type="submit">Delete</button>
+                                    </form>
+                                <?php else: ?>
+                                    <form class="m-2" action="solution/<?= $problem['id']; ?>" method="post">
+                                        <?= csrf_field() ?>
+                                        <button class="btn btn-secondary" type="submit">See Solution</button>
+                                    </form>
+                                <?php endif ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>

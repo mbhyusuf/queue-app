@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="<?= base_url('/'); ?>">Go Consult</a>
+
+        <a class="navbar-brand" href="<?= base_url('/'); ?>"><img class="mr-2" src="logo.png" alt="Logo" srcset="">Go Consult</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

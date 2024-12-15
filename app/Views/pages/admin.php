@@ -6,7 +6,11 @@
     <div class="row">
         <div class="col">
             <h1>Today's Clients.</h1>
-
+            <?php if (session()->getFlashdata('message')) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?= session()->getFlashdata('message'); ?>
+                </div>
+            <?php endif ?>
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -40,13 +44,16 @@
                             <td>
                                 <form class="m-2" action="admin/<?= $problem['id']; ?>" method="post">
                                     <?= csrf_field() ?>
-                                    <button class="btn btn-warning" type="submit" <?= ($i > 2) ? "disabled" : ""; ?>>Mark as Done</button>
+                                    <button class="btn btn-warning" type="submit" <?= ($i > 2) ? "disabled" : ""; ?>>Advice Solution</button>
                                 </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            <?php if (!$problems): ?>
+                <p class="font-italic">No work today.</p>
+            <?php endif ?>
         </div>
     </div>
 </div>
