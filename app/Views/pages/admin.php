@@ -15,7 +15,6 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Client</th>
                         <th scope="col">Title</th>
                         <th scope="col">Description</th>
                         <th scope="col">Created at</th>
@@ -30,12 +29,6 @@
                         <tr>
 
                             <th scope="row"><?= $i++; ?></th>
-                            <?php
-                            $userModel = new \CodeIgniter\Shield\Models\UserModel;
-                            $user = $userModel->find($problem['user_id']);
-                            ?>
-                            <td><?= $user->username; ?></td>
-
                             <td><?= $problem['title']; ?></td>
                             <td><?= $problem['description']; ?></td>
                             <td><?= $problem['created_at']; ?></td>

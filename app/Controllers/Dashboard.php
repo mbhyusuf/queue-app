@@ -9,7 +9,7 @@ class Dashboard extends BaseController
     public function index()
     {
         $problemsModel = new Problem();
-        $problems = $problemsModel->where('user_id', auth()->id())->findAll();
+        $problems = $problemsModel->where('user_id', auth()->id())->orderBy('created_at')->findAll();
         $username = auth()->user()->username;
 
         $data = [

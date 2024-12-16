@@ -12,6 +12,10 @@
                     <a class="nav-item nav-link <?= ($title == 'Dashboard') ? 'active' : ''; ?>" href="<?= base_url('/dashboard'); ?>">Dashboard</a>
                 <?php endif ?>
                 <a class="nav-item nav-link <?= ($title == 'About') ? 'active' : ''; ?>" href="<?= base_url('/about'); ?>">About</a>
+                <?php if (auth()->user()->inGroup('admin', 'superadmin')) : ?>
+                    <a class="nav-item nav-link <?= ($title == 'User Management') ? 'active' : ''; ?>" href="<?= base_url('/admin/user-management'); ?>">User Management</a>
+                    <a class="nav-item nav-link <?= ($title == 'Admin') ? 'active' : ''; ?>" href="<?= base_url('/admin'); ?>">Admin Page</a>
+                <?php endif ?>
             </div>
         </div>
         <?php if (!(auth()->loggedIn())): ?>
