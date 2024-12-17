@@ -11,13 +11,6 @@
                 <?= csrf_field() ?>
 
                 <div class="form-floating mb-4">
-                    <input type="text" class="form-control" id="floatingUsernameInput" name="username" inputmode="text" placeholder=""
-                        value="<?= $username; ?>"
-                        required disabled>
-                    <label for="floatingUsernameInput">Client</label>
-                </div>
-
-                <div class="form-floating mb-4">
                     <input type="text" class="form-control" id="floatingUsernameInput" name="title" inputmode="text" placeholder=""
                         value="<?= $problem['title']; ?>"
                         required disabled>

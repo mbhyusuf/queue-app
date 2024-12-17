@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Models\Problem;
 use App\Models\Solution;
-use \CodeIgniter\Shield\Models\UserModel;
 use \Ramsey\Uuid\Uuid;
 
 class SolutionController extends BaseController
@@ -21,12 +20,9 @@ class SolutionController extends BaseController
         $problemsModel = new Problem();
         $problem = $problemsModel->find($id);
 
-        $userModel = new UserModel();
-        $user = $userModel->find($problem['user_id']);
         $data = [
             'title' => 'Solution',
             'problem' => $problem,
-            'username' => $user->username
         ];
         return view('pages/solution', $data);
     }
