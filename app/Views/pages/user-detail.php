@@ -8,9 +8,9 @@ use \CodeIgniter\Shield\Models\UserIdentityModel;
 $userIdentityModel = new UserIdentityModel;
 
 ?>
-<div class="container">
+<div class="container m-3">
     <div class="row">
-        <div class="col">
+        <div class="col card bg-dark text-light">
             <h1>User Detail</h1>
             <div
                 class="card text-white bg-secondary">

@@ -2,9 +2,9 @@
 
 <?= $this->section('content'); ?>
 
-<div class="container">
+<div class="container m-3">
     <div class="row">
-        <div class="col">
+        <div class="col card bg-dark text-light">
             <h1>Compose a solution for client.</h1>
             <h5>Problem ID: <?= $problem['id']; ?></h5>
             <form action="../admin/solution/<?= $problem['id']; ?>" method="post">

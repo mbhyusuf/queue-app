@@ -2,11 +2,11 @@
 
 <?= $this->section('content'); ?>
 
-<div class="container">
+<div class="container m-3">
     <div class="row">
-        <div class="col">
+        <div class="col card bg-dark text-light">
             <h1>Advised solution to your problem.</h1>
-            <div class="card text-white bg-secondary">
+            <div class="card text-white bg-secondary m-2">
                 <div class="card-body">
                     <h4 class="card-title"><?= $problem['title']; ?></h4>
                     <p class="card-text"><?= $problem['description']; ?></p>

@@ -8,16 +8,16 @@ use \CodeIgniter\Shield\Models\UserIdentityModel;
 $userIdentityModel = new UserIdentityModel;
 
 ?>
-<div class="container">
+<div class="container m-3">
     <div class="row">
-        <div class="col">
+        <div class="col card bg-dark text-light">
             <h1>Users</h1>
             <?php if (session()->getFlashdata('message')) : ?>
                 <div class="alert alert-success" role="alert">
                     <?= session()->getFlashdata('message'); ?>
                 </div>
             <?php endif ?>
-            <table class="table">
+            <table class="table text-light">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>

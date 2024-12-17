@@ -2,9 +2,9 @@
 
 <?= $this->section('content'); ?>
 
-<div class="container">
+<div class="container m-3">
     <div class="row">
-        <div class="col">
+        <div class="col card bg-dark text-light">
             <h1>Hello, world! This is the about page.</h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Maiores itaque quia placeat alias neque asperiores nulla mollitia,

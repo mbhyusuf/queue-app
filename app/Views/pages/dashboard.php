@@ -2,9 +2,9 @@
 
 <?= $this->section('content'); ?>
 
-<div class="container">
+<div class="container m-3">
     <div class="row">
-        <div class="col">
+        <div class="col card bg-dark text-light">
             <h1>Hello, <?= $username; ?>! This is Go Consult Dashboard!</h1>
             <?php if (session()->getFlashdata('message')) : ?>
                 <div class="alert alert-success" role="alert">
@@ -13,7 +13,7 @@
             <?php endif ?>
             <a href="../consult" class="btn btn-primary m-2">Consult</a>
             <h5>Consultation history</h5>
-            <table class="table">
+            <table class="table text-light">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
