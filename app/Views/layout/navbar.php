@@ -11,7 +11,7 @@
                     <a class="nav-item nav-link <?= ($title == 'Dashboard') ? 'active' : ''; ?>" href="<?= base_url('/dashboard'); ?>">Dashboard</a>
                 <?php endif ?>
                 <a class="nav-item nav-link <?= ($title == 'About') ? 'active' : ''; ?>" href="<?= base_url('/about'); ?>">About</a>
-                <?php if (auth()->user()->inGroup('admin', 'superadmin')) : ?>
+                <?php if (auth()->user() && auth()->user()->inGroup('admin', 'superadmin')) : ?>
                     <a class="nav-item nav-link <?= ($title == 'User Management') ? 'active' : ''; ?>" href="<?= base_url('/admin/user-management'); ?>">User Management</a>
                     <a class="nav-item nav-link <?= ($title == 'Admin') ? 'active' : ''; ?>" href="<?= base_url('/admin'); ?>">Admin Page</a>
                 <?php endif ?>
@@ -19,7 +19,7 @@
         </div>
         <?php if (!(auth()->loggedIn())): ?>
             <a href="../login" class="btn btn-primary m-2">Log In</a>
-            <a href="../login" class="btn btn-outline-primary m-2">Register</a>
+            <a href="../login" class="btn btn-outline-light m-2">Register</a>
         <?php else: ?>
             <a href="../logout" class="btn btn-secondary m-2">Log Out</a>
         <?php endif ?>
